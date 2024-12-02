@@ -1,8 +1,6 @@
-const content = await Deno.readTextFile("data.txt");
+import { stringArrayToIntArray } from "../utils/utils.ts";
 
-function stringArrayToIntArray(arr: string[]) {
-  return arr.filter(Boolean).map((v) => +v);
-}
+const content = await Deno.readTextFile("data.txt");
 
 const firstColumnStr = content.split("\n").map((row) => row.split(/\s+/)[0]);
 const secondColumnStr = content.split("\n").map((row) => row.split(/\s+/)[1]);
