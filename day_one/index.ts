@@ -1,6 +1,7 @@
 import { stringArrayToIntArray } from "../utils/utils.ts";
 
-const content = await Deno.readTextFile("data.txt");
+const file = Bun.file("data.txt");
+const content = await file.text();
 
 const firstColumnStr = content.split("\n").map((row) => row.split(/\s+/)[0]);
 const secondColumnStr = content.split("\n").map((row) => row.split(/\s+/)[1]);

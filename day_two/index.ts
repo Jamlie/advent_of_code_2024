@@ -1,6 +1,7 @@
 import { stringArrayToIntArray } from "../utils/utils.ts";
 
-const content = await Deno.readTextFile("data.txt");
+const file = Bun.file("data.txt");
+const content = await file.text();
 
 function partOne() {
   const cppOrRust = {
@@ -62,6 +63,7 @@ function partTwo() {
   console.log(cppOrRust);
 }
 
+partOne();
 partTwo();
 
 function isRowSafe(processedRow: number[]) {
